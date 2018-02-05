@@ -11,7 +11,7 @@ namespace VirtualPets
             Console.ReadLine();
             Console.WriteLine("Please enter the model from the menu below that correlates with the type of Astromech android.");
 
-            Console.WriteLine("R2");
+            Console.WriteLine("R2"); // Astromech androids for the user to pick from 
             Console.WriteLine("CP");
             Console.WriteLine("BB");
             Console.WriteLine("Type END to exit program");
@@ -19,7 +19,7 @@ namespace VirtualPets
 
             if (userDroidType == "R2")
             {
-                Console.WriteLine("We are working on a R2D2 unit"); 
+                Console.WriteLine("We are working on a R2D2 unit"); // This lets the user know what type of android they chose 
             }
             else if (userDroidType == "CP")
             {
@@ -31,7 +31,7 @@ namespace VirtualPets
             }
             else if (userDroidType == "END")
             {
-                Console.WriteLine("Thank you for using the Astromech program");
+                Console.WriteLine("Thank you for using the Astromech program!");
                 return;
             }
 

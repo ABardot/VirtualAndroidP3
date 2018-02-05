@@ -4,7 +4,7 @@ namespace VirtualPets
 {
     internal class Program
     {
-        private static void Main()
+        private static void Main() // Your user interface should live in the Main method of the Program class. 
         {
             Console.WriteLine("Welcome to the Astromech android diagnostic program");
             Console.WriteLine("This program will help diagnose your Astromech android, press any key to start diagnostics.");
@@ -19,7 +19,7 @@ namespace VirtualPets
 
             if (userDroidType == "R2")
             {
-                Console.WriteLine("We are working on a R2D2 unit");
+                Console.WriteLine("We are working on a R2D2 unit"); 
             }
             else if (userDroidType == "CP")
             {
@@ -36,23 +36,23 @@ namespace VirtualPets
             }
 
             VirtualPets droid = new VirtualPets(userDroidType);
-            do
+            do // Start of my do while
             {
                 {
-                    Console.WriteLine("The {0} Diagnostic status:", userDroidType);
-                    Console.WriteLine("\n {0}% Battery level", droid.BatteryLevel);
-                    Console.WriteLine("\n {0}% Hydraulic pressure", droid.HydrolicPressure);
+                    Console.WriteLine("The {0} Diagnostic status:", userDroidType); 
+                    Console.WriteLine("\n {0}% Battery level", droid.BatteryLevel); // Display current status of pet
+                    Console.WriteLine("\n {0}% Hydraulic pressure", droid.HydrolicPressure); // Implement Tick method
                     Console.WriteLine("\n {0}% Tune up", droid.TuneUp);
                     Console.WriteLine();
-
-                    Console.WriteLine("Please enter an option to fix the android.");
+                    // Display options for interacting with pet & Ask user what action to take
+                    Console.WriteLine("Please enter an option to fix the android."); // Interactive user interface 
                     Console.WriteLine("\nPress 1 to fix battery level on the  {0}", userDroidType);
-                    Console.WriteLine("\nPress 2 to fix Hydraulic Level on the {0}", userDroidType);
-                    Console.WriteLine("\nPress 3 to tune up your {0}", userDroidType);
+                    Console.WriteLine("\nPress 2 to fix Hydraulic Level on the {0}", userDroidType); 
+                    Console.WriteLine("\nPress 3 to tune up your {0}", userDroidType); 
                     Console.WriteLine("\nPress 4 to exit program");
                     int userChoice = Int32.Parse(Console.ReadLine());
 
-                    switch (userChoice)
+                    switch (userChoice) // User's selection should trigger an action
                     {
                         case 1:
                             droid.FixBattery();
@@ -71,8 +71,8 @@ namespace VirtualPets
 
                         case 4:
                             userDroidType = "END";
-                            Console.WriteLine("Thank you for using the Astromech program");
-                            break;
+                            Console.WriteLine("Thank you for using the Astromech program"); 
+                            break; // When user enters END this executes like in project 2
 
                         default:
                             break;
@@ -80,7 +80,7 @@ namespace VirtualPets
 
                     droid.Tick();
                 }
-            } while (userDroidType != "END");
+            } while (userDroidType != "END"); // Ends application  
         }
     }
 }

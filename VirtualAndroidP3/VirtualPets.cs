@@ -2,11 +2,10 @@
 
 namespace VirtualPets
 {
-    public class VirtualPets
+    public class VirtualPets // You should also have a VirtualPet class in a separate file.
     {
-        // Fields
+        // Fields (at least three)
         private string droidType;
-
         private int batteryLevel;
         private int hydraulicPressure;
         private int tuneUp;
@@ -14,8 +13,7 @@ namespace VirtualPets
         private bool hydraulicPressureFixed;
         private bool isTunedUp;
 
-
-        // Properties
+        // Properties (at least three)
         public string DroidType
         {
             get { return this.droidType; }
@@ -27,7 +25,7 @@ namespace VirtualPets
             get { return this.batteryLevel; }
             set
             {
-                this.batteryLevel = value;
+                this.batteryLevel = value; // I set the range of the field here 
                 if (this.batteryLevel < 0)
                 {
                     this.batteryLevel = 0;
@@ -91,13 +89,13 @@ namespace VirtualPets
             set { this.isTunedUp = value; }
         }
 
-        // Constructors
+        // Constructors (at least one)
         public VirtualPets()
         {
             // Default
         }
 
-        public VirtualPets(string droidType)
+        public VirtualPets(string droidType) // Set the fields here for the Tick()
         {
             this.droidType = droidType;
             this.batteryLevel = 50;
@@ -105,10 +103,10 @@ namespace VirtualPets
             this.tuneUp = 20;
         }
 
-        // Methods
+        // Methods (at least three)
         public void FixBattery()
         {
-            this.batteryLevel += (100 - this.batteryLevel);
+            this.batteryLevel += (100 - this.batteryLevel); // Your methods should cause the appropriate properties to update
             Console.WriteLine("{0} battery levels have increased", droidType);
         }
 
@@ -118,7 +116,6 @@ namespace VirtualPets
             Console.WriteLine("{0} hydraulic pressure has increased", droidType);
         }
 
-
         public void FixTuneUp()
         {
             this.tuneUp = 100;
@@ -127,7 +124,7 @@ namespace VirtualPets
             Console.WriteLine("{0} is all tuned up", droidType);
         }
 
-        public void Tick()
+        public void Tick() // Tick method
         {
             if (this.batteryFixed == true)
             {
